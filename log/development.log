@@ -193,3 +193,565 @@ Migrating to CreatePosts (20210728141523)
   [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(7709204452269345585)[0m
   [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2021-07-28 22:02:58 +0530
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 389)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 6430)
+Completed 200 OK in 21ms (Views: 13.6ms | ActiveRecord: 0.0ms | Allocations: 10099)
+
+
+Started GET "/sign_up" for ::1 at 2021-07-28 22:03:08 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/sign_up"):
+  
+Started GET "/sign_up" for ::1 at 2021-07-28 22:04:41 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/sign_up"):
+  
+Started GET "/sign_up" for ::1 at 2021-07-28 22:05:00 +0530
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/sign_up"):
+  
+Started GET "/sign_up" for ::1 at 2021-07-28 22:05:25 +0530
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 79.4ms | Allocations: 16519)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 86.1ms | Allocations: 22381)
+Completed 200 OK in 97ms (Views: 89.6ms | ActiveRecord: 0.0ms | Allocations: 25627)
+
+
+Started GET "/sign_up" for ::1 at 2021-07-28 22:07:57 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 7.2ms | Allocations: 12258)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 15423)
+Completed 200 OK in 16ms (Views: 14.7ms | ActiveRecord: 0.0ms | Allocations: 16736)
+
+
+Started GET "/sign_up" for ::1 at 2021-07-28 22:21:06 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 7.5ms | Allocations: 3782)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 3867)
+Completed 500 Internal Server Error in 10ms (Allocations: 5127)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Sign Up</h1>
+  <%= form_with model: @user, url: sign_up_path do |f| %>
+  <div class="field">
+    <p>
+      <%= f.label 'Email' %><br>
+      <%= f.email_field :email %>
+    </p>
+  </div>
+
+  <div class="field">
+    <p>
+      <%= f.label 'First Name' %><br>
+      <%= f.text_field :firstname %>
+    </p>
+  </div>
+
+  <div class="field">
+    <p>
+      <%= f.label 'Last Name' %><br>
+      <%= f.text_field :lastname %>
+    </p>
+  </div>
+
+  <div class="field">
+    <p>
+      <%= f.label 'Username' %><br>
+      <%= f.text_field :username %>
+    </p>
+  </div>
+
+  <div class="field">
+    <p>
+      <%= f.label 'Phone' %><br>
+      <%= f.telephone_field :phone %>
+    </p>
+  </div>
+
+  <div class="field">
+    <p>
+      <%= f.label 'Select Gender' %><br>
+      <%= f.radio_button :gender, 'male' %> Male<br />
+      <%= f.radio_button :gender, 'female' %> Female<br />
+      <%= f.radio_button :gender, 'others' %> others<br />
+    </p>
+  </div>
+
+  <div class="field">
+    <p>
+      <%= f.label 'Select Hobby' %><br>
+      <% days => ['Mon', 'Tue', 'Wen', 'Thu', 'Fri', 'Sat', 'Sun']%>
+      <%= days.each do |day|%>
+        <%=f.check_box :days, { multiple: true }, day%>
+      <%= end%>
+    </p>
+  </div>
+
+  <div class="field">
+    <p>
+      <%= f.label 'email' %><br>
+      <%= f.text_field :email %>
+    </p>
+  </div>
+
+  <div class="field">
+    <p>
+      <%= f.label 'email' %><br>
+      <%= f.text_field :email %>
+    </p>
+  </div>
+    <p>
+    <%= f.label 'email' %><br>
+    <%= f.text_field :email %>
+    </p>
+    <p>
+    <%= f.label 'password' %><br>
+    <%= f.password_field :password %>
+    </p>
+    <p>
+    <%= f.label 'password_confirmation' %><br>
+    <%= f.password_field :password_confirmation %>
+    </p>
+    <p>
+    <%= f.submit 'Sign Up' %>
+    </p>
+  <% end %>
+
+<script type="text/javascript">
+
+$("input[type='radio']").change(function(){ 
+    if ($('input[type="radio"]:checked').val() == "others")
+    {
+        $('input[type="hidden"]').val('')   
+        $('input[type="hidden"]').prop("type", "text");
+    }
+    else if ($('input[type="radio"]:checked').val() != "others")
+    {
+        $('input[type="hidden"]').prop("type", "hidden");
+        $('input[type="hidden"]').val($('input[type="radio"]:checked').val())
+    } 
+});
+
+</script>
+
+):
+1:    <h1>Sign Up</h1>
+2:      <%= form_with model: @user, url: sign_up_path do |f| %>
+3:      <div class="field">
+4:        <p>
+5:          <%= f.label 'Email' %><br>
+6:          <%= f.email_field :email %>
+7:        </p>
+8:      </div>
+9:    
+10:      <div class="field">
+11:        <p>
+12:          <%= f.label 'First Name' %><br>
+13:          <%= f.text_field :firstname %>
+14:        </p>
+15:      </div>
+16:    
+17:      <div class="field">
+18:        <p>
+19:          <%= f.label 'Last Name' %><br>
+20:          <%= f.text_field :lastname %>
+21:        </p>
+22:      </div>
+23:    
+24:      <div class="field">
+25:        <p>
+26:          <%= f.label 'Username' %><br>
+27:          <%= f.text_field :username %>
+28:        </p>
+29:      </div>
+30:    
+31:      <div class="field">
+32:        <p>
+33:          <%= f.label 'Phone' %><br>
+34:          <%= f.telephone_field :phone %>
+35:        </p>
+36:      </div>
+37:    
+38:      <div class="field">
+39:        <p>
+40:          <%= f.label 'Select Gender' %><br>
+41:          <%= f.radio_button :gender, 'male' %> Male<br />
+42:          <%= f.radio_button :gender, 'female' %> Female<br />
+43:          <%= f.radio_button :gender, 'others' %> others<br />
+44:        </p>
+45:      </div>
+46:    
+47:      <div class="field">
+48:        <p>
+49:          <%= f.label 'Select Hobby' %><br>
+50:          <% days => ['Mon', 'Tue', 'Wen', 'Thu', 'Fri', 'Sat', 'Sun']%>
+51:          <%= days.each do |day|%>
+52:            <%=f.check_box :days, { multiple: true }, day%>
+53:          <%= end%>
+54:        </p>
+55:      </div>
+56:    
+57:      <div class="field">
+58:        <p>
+59:          <%= f.label 'email' %><br>
+60:          <%= f.text_field :email %>
+61:        </p>
+62:      </div>
+63:    
+64:      <div class="field">
+65:        <p>
+66:          <%= f.label 'email' %><br>
+67:          <%= f.text_field :email %>
+68:        </p>
+69:      </div>
+70:        <p>
+71:        <%= f.label 'email' %><br>
+72:        <%= f.text_field :email %>
+73:        </p>
+74:        <p>
+75:        <%= f.label 'password' %><br>
+76:        <%= f.password_field :password %>
+77:        </p>
+78:        <p>
+79:        <%= f.label 'password_confirmation' %><br>
+80:        <%= f.password_field :password_confirmation %>
+81:        </p>
+82:        <p>
+83:        <%= f.submit 'Sign Up' %>
+84:        </p>
+85:      <% end %>
+86:    
+87:    <script type="text/javascript">
+88:    
+89:    $("input[type='radio']").change(function(){ 
+90:        if ($('input[type="radio"]:checked').val() == "others")
+91:        {
+92:            $('input[type="hidden"]').val('')   
+93:            $('input[type="hidden"]').prop("type", "text");
+94:        }
+95:        else if ($('input[type="radio"]:checked').val() != "others")
+96:        {
+97:            $('input[type="hidden"]').prop("type", "hidden");
+98:            $('input[type="hidden"]').val($('input[type="radio"]:checked').val())
+99:        } 
+100:    });
+101:    
+102:    </script>
+  
+app/views/users/new.html.erb:53: syntax error, unexpected `end'
+app/views/users/new.html.erb:85: syntax error, unexpected `end', expecting ')'
+app/views/users/new.html.erb:105: syntax error, unexpected `end', expecting ')'
+app/views/users/new.html.erb:53: syntax error, unexpected `end'
+app/views/users/new.html.erb:85: syntax error, unexpected `end', expecting ')'
+app/views/users/new.html.erb:105: syntax error, unexpected `end', expecting ')'
+app/views/users/new.html.erb:53: syntax error, unexpected `end'
+app/views/users/new.html.erb:85: syntax error, unexpected `end', expecting ')'
+app/views/users/new.html.erb:105: syntax error, unexpected `end', expecting ')'
+app/views/users/new.html.erb:53: syntax error, unexpected `end'
+app/views/users/new.html.erb:85: syntax error, unexpected `end', expecting ')'
+app/views/users/new.html.erb:105: syntax error, unexpected `end', expecting ')'
+app/views/users/new.html.erb:53: syntax error, unexpected `end'
+app/views/users/new.html.erb:85: syntax error, unexpected `end', expecting ')'
+app/views/users/new.html.erb:105: syntax error, unexpected `end', expecting ')'
+app/views/users/new.html.erb:53: syntax error, unexpected `end'
+app/views/users/new.html.erb:85: syntax error, unexpected `end', expecting ')'
+app/views/users/new.html.erb:105: syntax error, unexpected `end', expecting ')'
+Started GET "/sign_up" for ::1 at 2021-07-28 22:21:42 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 8.4ms | Allocations: 11388)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 11463)
+Completed 500 Internal Server Error in 12ms (Allocations: 12722)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `days' for #<ActionView::Base:0x000000000082f0>):
+    47:   <div class="field">
+    48:     <p>
+    49:       <%= f.label 'Select Hobby' %><br>
+    50:       <% days => ['Mon', 'Tue', 'Wen', 'Thu', 'Fri', 'Sat', 'Sun']%>
+    51:       <% days.each do |day|%>
+    52:         <%=f.check_box :days, { multiple: true }, day%>
+    53:       <%end%>
+  
+app/views/users/new.html.erb:50
+app/views/users/new.html.erb:2
+Started GET "/sign_up" for ::1 at 2021-07-28 22:21:43 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 6.3ms | Allocations: 10472)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 10541)
+Completed 500 Internal Server Error in 8ms (Allocations: 11005)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `days' for #<ActionView::Base:0x00000000008700>):
+    47:   <div class="field">
+    48:     <p>
+    49:       <%= f.label 'Select Hobby' %><br>
+    50:       <% days => ['Mon', 'Tue', 'Wen', 'Thu', 'Fri', 'Sat', 'Sun']%>
+    51:       <% days.each do |day|%>
+    52:         <%=f.check_box :days, { multiple: true }, day%>
+    53:       <%end%>
+  
+app/views/users/new.html.erb:50
+app/views/users/new.html.erb:2
+Started GET "/sign_up" for ::1 at 2021-07-28 22:21:43 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 7.4ms | Allocations: 10472)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 10540)
+Completed 500 Internal Server Error in 9ms (Allocations: 10942)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `days' for #<ActionView::Base:0x000000000089d0>):
+    47:   <div class="field">
+    48:     <p>
+    49:       <%= f.label 'Select Hobby' %><br>
+    50:       <% days => ['Mon', 'Tue', 'Wen', 'Thu', 'Fri', 'Sat', 'Sun']%>
+    51:       <% days.each do |day|%>
+    52:         <%=f.check_box :days, { multiple: true }, day%>
+    53:       <%end%>
+  
+app/views/users/new.html.erb:50
+app/views/users/new.html.erb:2
+Started GET "/sign_up" for ::1 at 2021-07-28 22:21:44 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 5.8ms | Allocations: 10472)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 10540)
+Completed 500 Internal Server Error in 7ms (Allocations: 10942)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `days' for #<ActionView::Base:0x00000000008ca0>):
+    47:   <div class="field">
+    48:     <p>
+    49:       <%= f.label 'Select Hobby' %><br>
+    50:       <% days => ['Mon', 'Tue', 'Wen', 'Thu', 'Fri', 'Sat', 'Sun']%>
+    51:       <% days.each do |day|%>
+    52:         <%=f.check_box :days, { multiple: true }, day%>
+    53:       <%end%>
+  
+app/views/users/new.html.erb:50
+app/views/users/new.html.erb:2
+Started GET "/sign_up" for ::1 at 2021-07-28 22:21:44 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 6.7ms | Allocations: 10472)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 10540)
+Completed 500 Internal Server Error in 8ms (Allocations: 10942)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `days' for #<ActionView::Base:0x00000000008f70>):
+    47:   <div class="field">
+    48:     <p>
+    49:       <%= f.label 'Select Hobby' %><br>
+    50:       <% days => ['Mon', 'Tue', 'Wen', 'Thu', 'Fri', 'Sat', 'Sun']%>
+    51:       <% days.each do |day|%>
+    52:         <%=f.check_box :days, { multiple: true }, day%>
+    53:       <%end%>
+  
+app/views/users/new.html.erb:50
+app/views/users/new.html.erb:2
+Started GET "/sign_up" for ::1 at 2021-07-28 22:22:28 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 15.0ms | Allocations: 16999)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.4ms | Allocations: 20206)
+Completed 200 OK in 21ms (Views: 20.7ms | Allocations: 21438)
+
+
+Started GET "/sign_up" for ::1 at 2021-07-28 22:23:47 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 7.3ms | Allocations: 18168)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 21331)
+Completed 200 OK in 16ms (Views: 15.2ms | Allocations: 22609)
+
+
+Started GET "/sign_up" for ::1 at 2021-07-28 22:25:43 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 14.2ms | Allocations: 18176)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.8ms | Allocations: 21354)
+Completed 200 OK in 21ms (Views: 20.0ms | Allocations: 22630)
+
+
+Started GET "/sign_up" for ::1 at 2021-07-28 22:29:26 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 13.7ms | Allocations: 18214)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 21409)
+Completed 200 OK in 20ms (Views: 19.5ms | Allocations: 22690)
+
+
+Started POST "/sign_up" for ::1 at 2021-07-28 22:32:35 +0530
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for UsersController):
+  
+actionpack (6.1.4) lib/abstract_controller/base.rb:160:in `process'
+actionview (6.1.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.2) lib/mini_profiler/profiler.rb:384:in `call'
+webpacker (5.4.0) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4) lib/rails/engine.rb:539:in `call'
+puma (5.3.2) lib/puma/configuration.rb:249:in `call'
+puma (5.3.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.3.2) lib/puma/thread_pool.rb:338:in `with_force_shutdown'
+puma (5.3.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.3.2) lib/puma/server.rb:438:in `process_client'
+puma (5.3.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+Started GET "/sign_up" for ::1 at 2021-07-28 22:33:54 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 9.0ms | Allocations: 7734)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.9ms | Allocations: 13650)
+Completed 200 OK in 39ms (Views: 19.4ms | ActiveRecord: 5.0ms | Allocations: 25483)
+
+
+Started GET "/sign_up" for ::1 at 2021-07-28 22:34:05 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 3440)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 6335)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms | Allocations: 6888)
+
+
+Started POST "/sign_up" for ::1 at 2021-07-28 22:34:55 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ywaghmare5203@gmail.com", "firstname"=>"Yogesh", "lastname"=>"Waghmare", "username"=>"ywaghmare5203", "phone"=>"8109481001", "gender"=>"male", "days"=>["0", "0", "Dancing", "0", "Reading", "0", "0", "0", "0"], "profile_photo"=>#<ActionDispatch::Http::UploadedFile:0x00007ff774ef9868 @tempfile=#<Tempfile:/tmp/RackMultipart20210728-232790-dmtqzb.jpeg>, @original_filename="photo-1541963463532-d68292c34b19.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[profile_photo]\"; filename=\"photo-1541963463532-d68292c34b19.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 2ms (ActiveRecord: 0.0ms | Allocations: 1698)
+
+
+Started GET "/" for ::1 at 2021-07-28 22:42:59 +0530
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 178)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 3486)
+Completed 200 OK in 9ms (Views: 8.3ms | Allocations: 4954)
+
+
+Started GET "/sign_up" for ::1 at 2021-07-28 22:43:00 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 5.2ms | Allocations: 4284)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 7383)
+Completed 200 OK in 32ms (Views: 10.1ms | ActiveRecord: 6.9ms | Allocations: 18494)
+
+
+Started POST "/sign_up" for ::1 at 2021-07-28 22:43:16 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ywaghmare5203@gmail.com", "firstname"=>"Yogesh", "lastname"=>"Waghmare", "username"=>"ywaghmare5203", "phone"=>"8109481001", "gender"=>"male", "hobby"=>["Traveling", "Painting"], "profile_photo"=>#<ActionDispatch::Http::UploadedFile:0x00007ff77c04e3b0 @tempfile=#<Tempfile:/tmp/RackMultipart20210728-232790-pprj07.jpeg>, @original_filename="photo-1541963463532-d68292c34b19.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[profile_photo]\"; filename=\"photo-1541963463532-d68292c34b19.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 2ms (ActiveRecord: 0.0ms | Allocations: 1653)
+
+
+Started GET "/" for ::1 at 2021-07-29 09:22:40 +0530
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 389)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 38.6ms | Allocations: 6474)
+Completed 200 OK in 48ms (Views: 40.9ms | ActiveRecord: 0.0ms | Allocations: 10023)
+
+
+Started GET "/sign_up" for ::1 at 2021-07-29 09:22:51 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 36.0ms | Allocations: 7563)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 80.7ms | Allocations: 10685)
+Completed 200 OK in 117ms (Views: 82.7ms | ActiveRecord: 9.2ms | Allocations: 20758)
+
+

@@ -1,0 +1,99 @@
+<h1>Sign Up</h1>
+  <%= form_with model: @user, url: sign_up_path do |f| %>
+  <div class="field">
+    <p>
+      <%= f.label 'Email' %><br>
+      <%= f.email_field :email %>
+    </p>
+  </div>
+
+  <div class="field">
+    <p>
+      <%= f.label 'First Name' %><br>
+      <%= f.text_field :firstname %>
+    </p>
+  </div>
+
+  <div class="field">
+    <p>
+      <%= f.label 'Last Name' %><br>
+      <%= f.text_field :lastname %>
+    </p>
+  </div>
+
+  <div class="field">
+    <p>
+      <%= f.label 'Username' %><br>
+      <%= f.text_field :username %>
+    </p>
+  </div>
+
+  <div class="field">
+    <p>
+      <%= f.label 'Phone' %><br>
+      <%= f.telephone_field :phone %>
+    </p>
+  </div>
+
+  <div class="field">
+    <p>
+      <%= f.label 'Select Gender' %><br>
+      <%= f.radio_button :gender, 'male' %> Male<br />
+      <%= f.radio_button :gender, 'female' %> Female<br />
+      <%= f.radio_button :gender, 'others' %> others<br />
+    </p>
+  </div>
+
+  <div class="field">
+    <p>
+      <%= f.label 'Select Hobby' %><br>
+      <% days = ['Singing', 'Dancing', 'Reading', 'Cricket', 'Traveling', 'Sleeping', 'Painting']%>
+      <% days.each do |day|%>
+        <%=f.check_box :hobby, { multiple: true }, day, false%><%= f.label day%>
+      <%end%>
+    </p>
+  </div>
+
+  <div class="field">
+    <p>
+      <%= f.label 'Profile Photo' %><br>
+      <%= f.file_field :profile_photo %>
+    </p>
+  </div>
+
+  <div class="field">
+    <p>
+      <%= f.label 'password' %><br>
+      <%= f.password_field :password %>
+    </p>
+  </div>
+
+  <div class="field">
+    <p>
+      <%= f.label 'password_confirmation' %><br>
+      <%= f.password_field :password_confirmation %>
+    </p>
+  </div>
+   <div class="submit">
+     <p>
+       <%= f.submit 'Sign Up' %>
+     </p>
+   </div>
+  <% end %>
+
+<script type="text/javascript">
+
+$("input[type='radio']").change(function(){ 
+    if ($('input[type="radio"]:checked').val() == "others")
+    {
+        $('input[type="hidden"]').val('')   
+        $('input[type="hidden"]').prop("type", "text");
+    }
+    else if ($('input[type="radio"]:checked').val() != "others")
+    {
+        $('input[type="hidden"]').prop("type", "hidden");
+        $('input[type="hidden"]').val($('input[type="radio"]:checked').val())
+    } 
+});
+
+</script>
